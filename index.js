@@ -5,8 +5,8 @@ var express = require('express');
 const APP_SECRET = '23d5e19704ac7df876be212ceef227ff';
 const PAGE_ACCESS_TOKEN = "EAAKQRuPa1hEBAMMP7uuNzRhFkOAhlKpnVZBuLStSalQEyKXjqjapKeGAyQ8RZAYqd9TtjmZCnl7KDViFWtiJQ1q4ueSB0g60u6hikx2InYCYwdDYb8hZAhkf46z868awsmZCT5BV3ZCPLARqXZBfsVZBi2IUqHgQyoaHVNTZAJCHGxe91C5BOENGt";
 //do face cung cap
-const VALIDATION_TOKEN = "EAAKQRuPa1hEBAOOePW5rIrFPlN1IPBkZAKD7XCs6tHXibPnRTfQiNMyACKkTMOKmOj8AeX0odAWArSpTlUcA9dHG3JmBZASUDbkczRS8l7i9GqAurJbfCzEziZCrLQDlroBwpxAbsZAqZBLllzTUw41p2rVy7wciJC0ir1WhCzv0UXyA3LUyseP1lxuvClmgZD";
-
+//const VALIDATION_TOKEN = "EAAKQRuPa1hEBAOOePW5rIrFPlN1IPBkZAKD7XCs6tHXibPnRTfQiNMyACKkTMOKmOj8AeX0odAWArSpTlUcA9dHG3JmBZASUDbkczRS8l7i9GqAurJbfCzEziZCrLQDlroBwpxAbsZAqZBLllzTUw41p2rVy7wciJC0ir1WhCzv0UXyA3LUyseP1lxuvClmgZD";
+const VALIDATION_TOKEN = "upitasia";
 var app = express();
 app.use(bodyParser.urlencoded({
   extended: false
