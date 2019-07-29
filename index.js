@@ -3,16 +3,24 @@ var bodyParser = require('body-parser');
 var express = require('express');
 
 const APP_SECRET = '23d5e19704ac7df876be212ceef227ff';
-const PAGE_ACCESS_TOKEN = "EAAKQRuPa1hEBAMMP7uuNzRhFkOAhlKpnVZBuLStSalQEyKXjqjapKeGAyQ8RZAYqd9TtjmZCnl7KDViFWtiJQ1q4ueSB0g60u6hikx2InYCYwdDYb8hZAhkf46z868awsmZCT5BV3ZCPLARqXZBfsVZBi2IUqHgQyoaHVNTZAJCHGxe91C5BOENGt";
+
+const PAGE_ACCESS_TOKEN = "EAAKQRuPa1hEBAErcNHAyugzR7UjSECbUwu7uAEJvyMcK1Jx3lE6HknzrwfruiqjIBJZC1elvrnMg2ujunteR98DsaRlKQMe5HEr2WKYZBgZCbEzkCKg0ok52bAQmZBhStyFFg1DIeN285An1NiQFJF8ymiXPavTpddqVJ9uZBpBFazaVkZCUap";
 //do face cung cap
 //const VALIDATION_TOKEN = "EAAKQRuPa1hEBAOOePW5rIrFPlN1IPBkZAKD7XCs6tHXibPnRTfQiNMyACKkTMOKmOj8AeX0odAWArSpTlUcA9dHG3JmBZASUDbkczRS8l7i9GqAurJbfCzEziZCrLQDlroBwpxAbsZAqZBLllzTUw41p2rVy7wciJC0ir1WhCzv0UXyA3LUyseP1lxuvClmgZD";
 const VALIDATION_TOKEN = "upitasia";
 var app = express();
+
+app.use(bodyParser.json())
+
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-var server = http.createServer(app);
+//var server = http.createServer(app);
 var request = require("request");
+
+
+app.set('port', process.env.PORT || 5000);
+//app.set('ip', process.env.IP || "0.0.0.0");
 
 app.get('/', (req, res) => {
   res.send("Home page. Server running okay.");
@@ -25,7 +33,7 @@ app.get('/webhook', function(req, res) { // Đây là path để validate tooken
   res.send('Error, wrong validation token');
 });
 
-app.post('/webhook', function(req, res) { // Phần sử lý tin nhắn của người dùng gửi đến
+app.post('/webhook', function(req, res) { // Phần xử lý tin nhắn của người dùng gửi đến
   var entries = req.body.entry;
   for (var entry of entries) {
     var messaging = entry.messaging;
@@ -62,10 +70,6 @@ function sendMessage(senderId, message) {
   });
 }
 
-app.set('port', process.env.PORT || 5000);
-app.set('ip', process.env.IP || "0.0.0.0");
-
-server.listen(app.get('port'), app.get('ip'), function() {
-  console.log("Chat bot server listening at %s:%d ", app.get('ip'), app.get('port'));
-});
-
+app.listen(app.get('port'), function() {
+  console.log('running on port', app.get('port'))
+})
