@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 var request = require("request");
 
 
-app.set('port', process.env.PORT || config.httpPort);
+app.set('port', process.env.PORT || 5000);
 //app.set('ip', process.env.IP || "0.0.0.0");
 
 app.get('/', (req, res) => {
