@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/webhook', function(req, res) { // Đây là path để validate tooken bên app facebook gửi qua
-  if (req.query['hub.verify_token'] === process.env.VERIFY_TOKEN) {
+  if (req.query['hub.verify_token'] === process.env.VERIFY_TOKEN) { // cẩn thận phần mề
     res.send(req.query['hub.challenge']);
   }
   res.send('Error, wrong validation token');
@@ -42,7 +42,7 @@ app.post('/webhook', function(req, res) { // Phần xử lý tin nhắn của ng
       if (message.message) {
         if (message.message.text) {
           var text = message.message.text;
-          console.log("message from user ",senderId," with message ",messaging)
+          console.log("A new message from user ",senderId," with message ",messaging)
           sendMessage(senderId, "Hello!! I'm a bot. Your message: " + text);
         }
       }
@@ -51,7 +51,7 @@ app.post('/webhook', function(req, res) { // Phần xử lý tin nhắn của ng
   res.status(200).send("OK");
 });
 
-// Đây là function dùng api của facebook để gửi tin nhắn
+//Gửi tin nhắn
 function sendMessage(senderId, message) {
   request({
     url: 'https://graph.facebook.com/v2.6/me/messages',
