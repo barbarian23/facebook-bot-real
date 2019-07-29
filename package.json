@@ -1,8 +1,11 @@
 {
   "name": "facebook_real",
   "version": "1.0.0",
-  "description": "",
+  "description": "just a facebook test",
   "main": "index.js",
+  "engines": {
+    "node": "10.16.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
