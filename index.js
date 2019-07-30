@@ -23,7 +23,7 @@ app.set('port', process.env.PORT || 5000);
 //app.set('ip', process.env.IP || "0.0.0.0");
 
 app.get('/', (req, res) => {
-  res.send("Olala.Bot fanpage cua upit asia chya ngon");
+  res.send("Olala.Bot fanpage của upit chạy ngon vãi chưởng");
 });
 
 app.get('/webhook', function(req, res) { // Đây là path để validate tooken bên app facebook gửi qua
@@ -44,7 +44,7 @@ app.post('/webhook', function(req, res) { // Phần xử lý tin nhắn của ng
         if (message.message.text) {
           var text = message.message.text;
           console.log("A new message from user ",senderId," with message ",messaging)
-          sendMessage(senderId, "Hello!! I'm a bot. Your message: " + text);
+          sendMessage(senderId, "Đang chạy thử bot.Tin nhắn vừa nhận được: " + text);
         }
       }
     }
