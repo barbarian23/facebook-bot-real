@@ -4,7 +4,7 @@ var express = require('express');
 
 const APP_SECRET = '23d5e19704ac7df876be212ceef227ff';
 
-const PAGE_ACCESS_TOKEN = "EAAKQRuPa1hEBAOT6f0Mv0qZCZBLgYZA0puL5G08upfSyENDL7SI7Ps9G2pXlZAcZAIk8ieZBbCrbZAWJ7n7Uv9tzYqBVbjsEBLL4en9kZCuDa0zgq83CoQZChCUMp8IWsZAtbXhOSI4NCCifqduEcynqC5xpG8hkpWfRfbco2fhk8yMgZDZD";
+const PAGE_ACCESS_TOKEN = "EAAKQRuPa1hEBAFvXLfeewG0TKBpfb2l4CKrMeJZA1ovsrZBWnCVHIGR5POlpOsFDgoQLdXqjnHBZCC6qYuZCPHO8W1CtQ0tv56ZBRZBNf6HbTZANTrGcb6llJxs6Av8iEO8bIIzYSgIxqSxZAPZBgXs482HZCs7VQnqxbOeOLvCM7nZCgZDZD";
 //do face cung cap
 //const VALIDATION_TOKEN = "EAAKQRuPa1hEBAOOePW5rIrFPlN1IPBkZAKD7XCs6tHXibPnRTfQiNMyACKkTMOKmOj8AeX0odAWArSpTlUcA9dHG3JmBZASUDbkczRS8l7i9GqAurJbfCzEziZCrLQDlroBwpxAbsZAqZBLllzTUw41p2rVy7wciJC0ir1WhCzv0UXyA3LUyseP1lxuvClmgZD";
 const VALIDATION_TOKEN = "upitasia";
@@ -23,7 +23,7 @@ app.set('port', process.env.PORT || 5000);
 //app.set('ip', process.env.IP || "0.0.0.0");
 
 app.get('/', (req, res) => {
-  res.send("Home page. Server running okay.");
+  res.send("Olala.Bot fanpage cua upit asia chya ngon");
 });
 
 app.get('/webhook', function(req, res) { // Đây là path để validate tooken bên app facebook gửi qua
